@@ -1,8 +1,10 @@
 // get the total amount of money to be paid depending on the cart items' prices
 import React from "react";
 import { Link } from "react-router-dom";
+import PaypalButton from "./PaypalButton";
+
 // when we are going to clear the cart we going to go back to the home page
-export default function CartTotals({ value }) {
+export default function CartTotals({ value, history }) {
   // we are going to use these values initialized in context.js file
   const { cartSubTotal, cartTax, cartTotal, clearCart } = value;
   return (
@@ -36,6 +38,11 @@ export default function CartTotals({ value }) {
               <span className="text-title"> total : </span>
               <strong>${cartTotal}</strong>
             </h5>
+            <PaypalButton
+              total={cartTotal}
+              clearCart={clearCart}
+              history={history}
+            />
           </div>
         </div>
       </div>
