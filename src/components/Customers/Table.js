@@ -17,7 +17,7 @@ export default class CustomerList extends React.Component {
             ],
             customers: []
         }
-        this.AddHandler = this.AddHandler.bind(this);
+        // this.AddHandler = this.AddHandler.bind(this);
     }
 
     async componentDidMount() {
@@ -29,15 +29,12 @@ export default class CustomerList extends React.Component {
         // console.log(this.state.customers)
     }
 
-    async AddHandler() {
-        this.props.history.push()
-    }
 
     render() {
 
         return (
             <div className="container">
-                {/* render here this.setState.customers */}
+                {/* render here this.state.customers */}
                 <Link
                     // styled as button
                     to='/customers/add'
@@ -47,7 +44,7 @@ export default class CustomerList extends React.Component {
         );
     }
 }
-            // const headerElements = this.state.headers.map((header, index) => { })
+
 
 
 
